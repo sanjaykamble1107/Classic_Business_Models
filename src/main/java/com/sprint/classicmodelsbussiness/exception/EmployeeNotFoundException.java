@@ -17,5 +17,4 @@ public class EmployeeNotFoundException extends RuntimeException {
 		// TODO Auto-generated constructor stub
 	}
 
-	
 }
