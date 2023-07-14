@@ -1,0 +1,83 @@
+<body>
+    <div id="orderlist">
+        <div class="container">
+            <h3>Orders</h3>
+            <div class="card text-white bg-secondary">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="d-flex">
+                        <select class="form-select" id="searchCriteria" [(ngModel)]="selectedCriteria">
+                            <option value="hello" selected>Search By</option>
+                            <option value="customerNumber">Customer Number</option>
+                            <option value="orderNumber">Orders Number</option>
+                        </select>
+                        <input placeholder="Search" type="text" [(ngModel)]="searching" (keyup)="search()" class="form-control rounded">
+                    </div>
+                    <div class="d-flex">
+                        <a routerLink="/addorder" class="btn btn-primary" style="margin-left: 1rem;">Add Order</a>
+                        <a routerLink="/orderdetails" class="btn btn-dark" style="margin-left: 1rem;">Order Details</a>
+                    </div>
+                </div>
+            <div class="card-body">
+
+                <table class="table table-bordered">
+
+                    <thead>
+                        <tr>
+                            <th>Order Number</th>
+                            <th>Order Date</th>
+                            <th>Required Date</th>
+                            <th>Shipped Date</th>
+                            <th>Status</th>
+                            <th>Comments</th>
+                            <th>Customer Number</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container>
+                            <tr *ngFor="let ord of ord">
+
+                                <td>{{ ord.orderNumber }}</td>
+                                <td>{{ ord.orderDate }}</td>
+                                <td>{{ ord.requiredDate }}</td>
+                                <td>{{ ord.shippedDate }}</td>
+                                <td>{{ ord.status }}</td>
+                                <td>{{ ord.comments }}</td>
+                                <td>{{ord.customerNumber}}</td>
+
+                                <td><a routerLink="/updateorder/{{ord.orderNumber}}" class="btn-outline-dark">update </a></td>
+
+                            </tr>
+                            <!-- </ng-container> -->
+                            <!-- <ng-container *ngIf="searching || (searching && onecustomer) "> -->
+                            <tr *ngFor="let ord of filterCustomerList">
+
+                                <td>{{ ord.orderNumber }}</td>
+                                <td>{{ ord.orderDate }}</td>
+                                <td>{{ ord.requiredDate }}</td>
+                                <td>{{ ord.shippedDate }}</td>
+                                <td>{{ ord.status }}</td>
+                                <td>{{ ord.comments }}</td>
+                                <td>{{ord.customerNumber}}</td>
+
+                                <td><a routerLink="/updateorder/{{ord.orderNumber}}" class="btn-outline-dark">update </a></td>
+
+                            </tr>
+                        </ng-container>
+
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+</body>
+

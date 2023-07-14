@@ -1,0 +1,91 @@
+<head>
+    <title>Orders Details</title>
+</head>
+
+<body>
+    <div id="orderlist">
+        <div class="container">
+            <h3>Order Details</h3>
+            <div class="card text-white bg-secondary" style="width: auto;">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <table>
+                            <thead>
+                                <div>
+                                    <tr>
+                                        <th>Order Number:
+                                            <input type="text" placeholder="Search" [(ngModel)]="searchorder" (keyup)="searchOrderNumber()">
+                                        </th>
+                                    </tr>
+                                </div>
+                            </thead>
+                        </table>
+                    </div>
+                    <div>
+                        <a routerLink="/addorderdetails" class="btn btn-dark">Add Order Details</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Order Number</th>
+                                <th>Product Code</th>
+                                <th>Quantity Order</th>
+                                <th>Price Each</th>
+                                <th>Order Line Number</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container  *ngIf="!searchorder && filterOrderList.length  ===  0">
+                                <tr *ngFor="let details of orderdetlist">
+
+                                    <td>{{ details.orderNumber }}</td>
+
+                                    <td>{{ details.productCode }}</td>
+
+                                    <td>{{ details.quantityOrdered }}</td>
+
+                                    <td>{{ details.priceEach }}</td>
+
+                                    <td>{{ details.orderLineNumber }}</td>
+
+                                    <td><a routerLink="/updateorderdetails/{{details.orderNumber}}/{{details.productCode}}" class="btn-outline-dark">update </a></td>
+
+                                </tr>
+                            </ng-container>
+
+
+                            <ng-container *ngIf="searchorder && filterOrderList.length  >  0">
+                                <tr *ngFor="let details of filterOrderList">
+
+                                    <td>{{ details.orderNumber }}</td>
+
+                                    <td>{{ details.productCode }}</td>
+
+                                    <td>{{ details.quantityOrdered }}</td>
+
+                                    <td>{{ details.priceEach }}</td>
+
+                                    <td>{{ details.orderLineNumber }}</td>
+
+                                    <td><a routerLink="/updateorderdetails/{{details.orderNumber}}/{{details.productCode}}" class="btn-outline-dark">update </a></td>
+
+                                </tr>
+                            </ng-container>
+                       
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+

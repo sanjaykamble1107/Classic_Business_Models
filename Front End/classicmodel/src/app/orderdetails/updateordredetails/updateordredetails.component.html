@@ -1,0 +1,43 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="bg-light p-4 align-center">
+                <!-- (ngSubmit)="onSubmit()" -->
+                <h3>You Can Update Your Data Here!</h3>
+                <hr>
+                <div>
+                    <label for="orderNumber">Order Number:</label>
+                    <input type="text" id="orderNumber" style="margin-left: 4.5rem;" name="orderNumber"
+                    [(ngModel)]="orderNumber"   >
+                </div>
+                <div>
+                    <label for="productCode">Product Code:</label>
+                    <input class="mt-3" type="text" id="productCode" style="margin-left:5rem; " name="productCode"
+                    [(ngModel)]="productCode" >
+                </div>
+                <div>
+                    <label for="quantityOrdered">Quantity Ordered:</label>
+                    <input class="mt-3" type="text" id="quantityOrdered" style="margin-left:3.3rem; " name="quantityOrdered"
+                    [(ngModel)]="quantityOrdered" >
+                </div>
+                <div>
+                    <label for="priceEach">Price Each:</label>
+                    <input class="mt-3" type="text" id="priceEach" style="margin-left:6.5rem; " name="priceEach"
+                    [(ngModel)]="priceEach" >
+                </div>
+                <div>
+                    <label for="orderLineNumber">Order Line Number:</label>
+                    <input class="mt-3" type="text" id="orderLineNumber" style="margin-left:2.5rem; " name="orderLineNumber"
+                      [(ngModel)]="orderLineNumber" >
+                </div>
+             
+
+                <hr>
+                <!-- <button class="align-center" href="employees"  type="submit" style="background-color:rgb(141, 195, 212) ;" >ADD</button> -->
+                <button class="btn btn-outline-success" (click)="onSubmit()">Update Order Details</button>
+                <!-- (click)="onSubmit()" -->
+            </form>
+        </div>
+    </div>
+</div>
+

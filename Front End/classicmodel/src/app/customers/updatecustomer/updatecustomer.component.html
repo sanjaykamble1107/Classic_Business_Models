@@ -1,0 +1,88 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="bg-light p-4 align-center border border-dark" >
+                <!-- (ngSubmit)="onSubmit()" -->
+                <h3>You Can Update Your Data Here!</h3>
+                <hr>
+                <!-- (ngsubmit)="updateEmployee()" class="bg-light p-4 align-center"> -->
+                <!-- Form content here -->
+
+                <!-- <div>
+                    <label for="employeeNumber">Employee Number:</label>
+                    <input type="text" style="margin: 1rem;" id="employeeNumber" name="employeeNumber"
+                        [(ngModel)]="employee.employeeNumber">
+                </div> -->
+                <div>
+                    <label for="customerNumber">Customer Number:</label>
+                    <input type="text" id="customerNumber" style="margin-left: 4.5rem;" name="customerNumber"
+                    [(ngModel)]="customerNumber">
+                </div>
+                <div>
+                    <label for="customerName">Customer Name:</label>
+                    <input class="mt-3" type="text" id="customerName" style="margin-left:5.4rem; " name="customerName"
+                    [(ngModel)]="customerName">
+                </div>
+                <div>
+                    <label for="contactLastName">Contact Last Name:</label>
+                    <input class="mt-3" type="text" id="contactLastName" style="margin-left:4.2rem; "
+                        name="contactLastName" [(ngModel)]="contactLastName">
+                </div>
+                <div>
+                    <label for="contactFirstName">Contact First Name:</label>
+                    <input class="mt-3" type="text" id="contactFirstName" style="margin-left:4.2rem; "
+                        name="contactFirstName" [(ngModel)]="contactFirstName">
+                </div>
+                <div>
+                    <label for="phone">Phone:</label>
+                    <input class="mt-3" type="text" id="phone" style="margin-left:9.9rem; " name="phone"
+                    [(ngModel)]="phone">
+                </div>
+                <div>
+                    <label for="addressLine1">Address Line 1:</label>
+                    <input class="mt-3" type="text" id="addressLine1" style="margin-left:6.2rem; " name="addressLine1"
+                    [(ngModel)]="addressLine1">
+                </div>
+                <div>
+                    <label for="addressLine2">Address Line 2:</label>
+                    <input class="mt-3" type="text" id="addressLine2" style="margin-left:6.2rem; " name="addressLine2"
+                    [(ngModel)]="addressLine2">
+                </div>
+                <div>
+                    <label for="city">City:</label>
+                    <input class="mt-3" type="text" id="city" style="margin-left:11rem; " name="city"
+                    [(ngModel)]="city">
+                </div>
+                <div>
+                    <label for="state">State:</label>
+                    <input class="mt-3" type="text" id="state" style="margin-left:10.5rem; " name="state"
+                    [(ngModel)]="state">
+                </div>
+                <div>
+                    <label for="postalCode">Postal Code:</label>
+                    <input class="mt-3" type="text" id="postalCode" style="margin-left:7.5rem; " name="postalCode"
+                    [(ngModel)]="postalCode" >
+                </div>
+                <div>
+                    <label for="country">Country:</label>
+                    <input class="mt-3" type="text" id="country" style="margin-left:9.1rem; " name="country"
+                    [(ngModel)]="country" >
+                </div>
+                <div>
+                    <label for="salesRepEmployeeNumber">Sales Rep Number:</label>
+                    <input class="mt-3" type="text" id="salesRepEmployeeNumber" style="margin-left:4.4rem; "
+                        name="salesRepEmployeeNumber" [(ngModel)]="salesRepEmployeeNumber" >
+                </div>
+                <div>
+                    <label for="creditLimit">Credit Limit:</label>
+                    <input class="mt-3" type="text" id="creditLimit" style="margin-left:7.5rem; " name="creditLimit"
+                    [(ngModel)]="creditLimit" >
+                </div>
+                <hr>
+                <!-- <button class="align-center" href="employees"  type="submit" style="background-color:rgb(141, 195, 212) ;" >ADD</button> -->
+                <button  class="btn btn-outline-success" (click)="onSubmit()">Update Customer</button>
+
+            </form>
+        </div>
+    </div>
+</div>

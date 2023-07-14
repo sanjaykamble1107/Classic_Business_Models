@@ -1,0 +1,77 @@
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form class="bg-light p-4 align-center" (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+        <h3>Add Employee</h3>
+        <hr>
+        <div>
+          <label for="employeeNumber">Employee Number:</label>
+          <input type="text" style="margin: 1rem;" id="employeeNumber" name="employeeNumber"
+            [(ngModel)]="employee.employeeNumber" disabled>
+        </div>
+        <div>
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" style="margin-left: 4.5rem;" name="lastName" required pattern="[a-zA-Z]*"
+            [(ngModel)]="employee.lastName" #lastName="ngModel">
+          <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+            <p style="color: red;">Last Name is required and only alphabets.</p>
+          </div>
+        </div>
+        <div>
+          <label for="firstName">First Name:</label>
+          <input class="mt-3" type="text" id="firstName" style="margin-left:4.5rem; " name="firstName" required
+            pattern="[a-zA-Z]*" [(ngModel)]="employee.firstName" #firstName="ngModel">
+          <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+            <p style="color: red;">First Name is required.</p>
+          </div>
+        </div>
+        <div>
+          <label for="extension">Extension:</label>
+          <input class="mt-3" type="text" id="extension" style="margin-left:5rem; " name="extension"
+            [(ngModel)]="employee.extension" #extension="ngModel">
+          <div *ngIf="extension.invalid && (extension.dirty || extension.touched)">
+            <p style="color: red;">Extension is required.</p>
+          </div>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input class="mt-3" type="email" id="email" style="margin-left:7rem; " name="email" required
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" [(ngModel)]="employee.email" #email="ngModel">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <p style="color: red;">Please enter a valid email address.</p>
+          </div>
+        </div>
+        <div>
+          <label for="officeCode">Office Code:</label>
+          <input class="mt-3" type="text" id="officeCode" style="margin-left:4.25rem; " name="officeCode" required
+            pattern="[0-9]*" [(ngModel)]="employee.officeCode" #officeCode="ngModel">
+          <div *ngIf="officeCode.invalid && (officeCode.dirty || officeCode.touched)">
+            <p style="color: red;">Office Code is required.</p>
+          </div>
+        </div>
+        <div>
+          <label for="reportsTo">Report To:</label>
+          <input class="mt-3" type="text" id="reportsTo" style="margin-left:5.25rem; " name="reportsTo" required
+            pattern="[0-9]*" [(ngModel)]="employee.reportsTo" #reportsTo="ngModel">
+          <div *ngIf="reportsTo.invalid && (reportsTo.dirty || reportsTo.touched)">
+            <p style="color: red;">Report To is required and only digit.</p>
+          </div>
+        </div>
+        <div>
+          <label for="jobTitle">Job Title:</label>
+          <input class="mt-3" type="text" id="jobTitle" style="margin-left:5.95rem; " name="jobTitle" required
+            [(ngModel)]="employee.jobTitle" #jobTitle="ngModel">
+          <div *ngIf="jobTitle.invalid && (jobTitle.dirty || jobTitle.touched)">
+            <p style="color: red;">Job Title is required.</p>
+          </div>
+        </div>
+
+        <hr>
+        <div *ngIf="formSubmitted && employeeForm.invalid">
+          <p style="color: red;">Please fill out all required fields correctly.</p>
+        </div>
+        <button type="submit" class="btn" style="background-color:lightblue;">ADD Employee</button>
+      </form>
+    </div>
+  </div>
+</div>

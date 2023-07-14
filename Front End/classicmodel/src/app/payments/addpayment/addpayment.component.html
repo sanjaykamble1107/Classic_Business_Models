@@ -1,0 +1,31 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="bg-light p-4 align-center" (ngSubmit)="onSubmit()">
+                <h3>Add Payment</h3>
+                <div>
+                    <label for="customerNumber">Customer Number:</label>
+                    <input type="text" style="margin: 1rem;" id="customerNumber" name="customerNumber"
+                        [(ngModel)]="payment.customerNumber" >
+                </div>
+                <div>
+                    <label for="checkNumber">Check Number:</label>
+                    <input type="text"  style="margin-left: 2.70rem;" id="checkNumber"name="checkNumber"
+                        [(ngModel)]="payment.checkNumber " >
+                </div><br>
+                <div>
+                    <label for="paymentDate">Payment Date:</label>
+                    <input type="date" id="paymentDate" style="margin-left: 4.5rem;" name="paymentDate"
+                        [(ngModel)]="payment.paymentDate" >
+                </div>&nbsp;
+               
+                <div>
+                    <label for="amount">Amount:</label>
+                    <input type="text" id="amount" style="margin-left: 5.85rem;" name="amount"
+                        [(ngModel)]="payment.amount " >&nbsp;
+                </div><br>
+                <button type="submit" class="btn" style="background-color:lightblue;">ADD Payment</button>
+            </form>
+            </div>
+
+

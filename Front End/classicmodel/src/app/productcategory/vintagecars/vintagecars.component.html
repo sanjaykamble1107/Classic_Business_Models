@@ -1,0 +1,54 @@
+<html>
+
+<body style="overflow-x:auto">
+    <!-- <h1>Employees </h1> -->
+
+    <div id="customerList">
+        <h2>Vintage cars List</h2>
+        <table class="table table-bordered container container-md  table-striped" >
+            <thead class="table-dark">
+                <tr>
+                    <th>productCode</th>
+                    <th>productName</th>
+                    <th>productLine</th>
+                    <th>productScale</th>
+                    <th>productVendor</th>
+                    <th>productDescription</th>
+                    <th>quantityInStock</th>
+                    <th>buyPrice</th>
+                    <th>MSRP</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody >
+
+                <tr *ngFor="let product of vintageCars">
+            
+                  <td>{{ product.productCode }}</td>
+            
+                  <td>{{ product.productName }}</td>
+            
+                  <td>{{ product.productLine }}</td>
+            
+                  <td>{{ product.productScale }}</td>
+            
+                  <td>{{ product.productVendor }}</td>
+            
+                  <td>{{ product.productDescription }}</td>
+            
+                  <td>{{ product.quantityInStock }}</td>
+            
+                  <td>{{ product.buyPrice }}</td>
+            
+                  <td>{{ product.msrp }}</td>
+            
+                  <td><a routerLink="/update" class="btn-outline-dark" >update </a></td>
+            
+                </tr>
+            
+              </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="bg-light p-4 align-center" (ngSubmit)="onSubmit()" #officeForm="ngForm">
+                <h3>Add Office</h3>
+                <hr>
+                <div>
+                    <label for="officeCode">Office Code:</label>
+                    <input class="mt-3" type="text" id="officeCode" style="margin-left: 4.5rem;" name="officeCode"
+                        [(ngModel)]="office.officeCode" disabled>
+                </div>
+
+                <div>
+                    <label for="city">City</label>
+                    <input class="mt-3" type="text" id="city" style="margin-left: 8.05rem;" name="city"
+                        [(ngModel)]="office.city" required pattern="[a-zA-Z]*">
+                    <div
+                        *ngIf="officeForm.controls['city'].invalid && (officeForm.controls['city'].dirty || officeForm.controls['city'].touched)">
+                        <p style="color: red;">City is required.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="phone">Phone</label>
+                    <input class="mt-3" type="text" id="phone" style="margin-left: 7rem;" name="phone"
+                        [(ngModel)]="office.phone" required pattern="[789]\d{9}">
+                    <div
+                        *ngIf="officeForm.controls['phone'].invalid && (officeForm.controls['phone'].dirty || officeForm.controls['phone'].touched)">
+                        <p style="color: red;">Phone number is required with only digits and should start from 7, 8, or
+                            9.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="addressLine1">Address Line 1</label>
+                    <input class="mt-3" type="text" id="addressLine1" style="margin-left: 3.5rem;" name="addressLine1"
+                        [(ngModel)]="office.addressLine1" required>
+                    <div
+                        *ngIf="officeForm.controls['addressLine1'].invalid && (officeForm.controls['addressLine1'].dirty || officeForm.controls['addressLine1'].touched)">
+                        <p style="color: red;">Address Line 1 is required.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="addressLine2">Address Line 2</label>
+                    <input class="mt-3" type="text" id="addressLine2" style="margin-left: 3.5rem;" name="addressLine2"
+                        [(ngModel)]="office.addressLine2" required>
+                    <div
+                        *ngIf="officeForm.controls['addressLine2'].invalid && (officeForm.controls['addressLine2'].dirty || officeForm.controls['addressLine2'].touched)">
+                        <p style="color: red;">Address Line 2 is required.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="state">State</label>
+                    <input class="mt-3" type="text" id="state" style="margin-left: 7.6rem;" name="state"
+                        [(ngModel)]="office.state" required pattern="[a-zA-Z]*">
+                    <div
+                        *ngIf="officeForm.controls['state'].invalid && (officeForm.controls['state'].dirty || officeForm.controls['state'].touched)">
+                        <p style="color: red;">State is required and should only contain alphabets.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="country">Country</label>
+                    <input class="mt-3" type="text" id="country" style="margin-left: 6.3rem;" name="country"
+                        [(ngModel)]="office.country" required pattern="[a-zA-Z]*">
+                    <div
+                        *ngIf="officeForm.controls['country'].invalid && (officeForm.controls['country'].dirty || officeForm.controls['country'].touched)">
+                        <p style="color: red;">Country is required and should only contain alphabets.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="postalCode">Postal Code</label>
+                    <input class="mt-3" type="text" id="postalCode" style="margin-left: 4.6rem;" name="postalCode"
+                        [(ngModel)]="office.postalCode" required pattern="[0-9]*">
+                    <div
+                        *ngIf="officeForm.controls['postalCode'].invalid && (officeForm.controls['postalCode'].dirty || officeForm.controls['postalCode'].touched)">
+                        <p style="color: red;">Postal Code is required and should only contain digits.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="territory">Territory</label>
+                    <input class="mt-3" type="text" id="territory" style="margin-left: 6.1rem;" name="territory"
+                        [(ngModel)]="office.territory" required pattern="[a-zA-Z]*">
+                    <div
+                        *ngIf="officeForm.controls['territory'].invalid && (officeForm.controls['territory'].dirty || officeForm.controls['territory'].touched)">
+                        <p style="color: red;">Territory is required.</p>
+                    </div>
+                </div>
+                <hr>
+
+                <div *ngIf="formSubmitted && officeForm.invalid">
+                    <p style="color: red;">Please fill out all required fields correctly.</p>
+                </div>
+                <button type="submit" class="btn" style="background-color:lightblue;">ADD Office</button>
+
+            </form>
+        </div>
+    </div>
+</div>

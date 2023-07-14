@@ -1,0 +1,106 @@
+<div class="container my-4">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <form class="bg-light p-4 align-center">
+
+                <!-- (ngSubmit)="onSubmit()" -->
+
+                <h3>You Can Update Your Data Here!</h3>
+
+                <hr>
+
+                <div>
+
+                    <label for="officeCode">Office Code:</label>
+
+                    <input type="text" id="officeCode" style="margin-left: 4.5rem;" name="officeCode"
+                        [(ngModel)]="officeCode">
+
+                </div>
+
+                <div>
+
+                    <label for="City">City:</label>
+
+                    <input class="mt-3" type="text" id="City" style="margin-left:8rem; " name="City" [(ngModel)]="city">
+
+                </div>
+
+                <div>
+
+                    <label for="phone">Phone:</label>
+
+                    <input class="mt-3" type="text" id="phone" style="margin-left:6.95rem; " name="phone"
+                        [(ngModel)]="phone">
+
+                </div>
+
+                <div>
+
+                    <label for="addressLine1">Address Line1:</label>
+
+                    <input class="mt-3" type="text" id="addressLine1" style="margin-left:3.55rem; " name="addressLine1"
+                        [(ngModel)]="addressLine1">
+
+                </div>
+
+                <div>
+
+                    <label for="addressLine2">Address Line2:</label>
+
+                    <input class="mt-3" type="text" id="addressLine2" style="margin-left:3.55rem; " name="addressLine2"
+                        [(ngModel)]="addressLine2">
+
+                </div>
+
+                <div>
+
+                    <label for="state">State:</label>
+
+                    <input class="mt-3" type="text" id="state" style="margin-left:7.45rem; " name="state"
+                        [(ngModel)]="state">
+
+                </div>
+
+                <div>
+
+                    <label for="country">Country:</label>
+
+                    <input class="mt-3" type="text" id="country" style="margin-left:6.15rem; " name="country"
+                        [(ngModel)]="country">
+
+                </div>
+
+                <div>
+
+                    <label for="postalCode">Postal Code:</label>
+
+                    <input class="mt-3" type="text" id="postalCode" style="margin-left:4.45rem; " name="postalCode"
+                        [(ngModel)]="postalCode">
+
+                </div>
+
+                <div>
+
+                    <label for="territory">Territory:</label>
+
+                    <input class="mt-3" type="text" id="territory" style="margin-left: 6.05rem;" name="territory"
+                        [(ngModel)]="territory">
+
+                </div>
+
+                <hr>
+
+                <button class="btn btn-dark" (click)="updateOffice()"
+                    style="background-color:lightblue;">Update</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

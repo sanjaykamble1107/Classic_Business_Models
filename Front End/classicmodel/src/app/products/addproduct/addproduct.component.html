@@ -1,0 +1,87 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form class="bg-light p-4 align-center border border-dark" (ngSubmit)="onSubmit()" #productForm="ngForm">
+          <h3 class="d-flex justify-content-center">Add Product</h3>
+          <hr>
+  
+          <div>
+            <label for="productCode">Product Code:</label>
+            <input type="text" id="productCode" style="margin-left: 4.5rem;" name="productCode"
+              [(ngModel)]="product.productCode" required>
+            <div *ngIf="productForm.controls['productCode'].invalid && (productForm.controls['productCode'].dirty || formSubmitted)"
+              class="text-danger">Product Code is required </div>
+          </div>
+  
+          <div>
+            <label for="productName">Product Name:</label>
+            <input class="mt-3" type="text" id="productName" style="margin-left: 4.25rem; " name="productName"
+              [(ngModel)]="product.productName" required pattern="[a-zA-Z]*">
+            <div *ngIf="productForm.controls['productName'].invalid && (productForm.controls['productName'].dirty || formSubmitted)"
+              class="text-danger">Product Name is required use alphabets</div>
+          </div>
+  
+          <div>
+            <label for="productLine">Product Line:</label>
+            <input class="mt-3" type="text" id="productLine" style="margin-left: 5rem; " name="productLine"
+              [(ngModel)]="product.productLine" required pattern="[a-zA-Z]*">
+            <div *ngIf="productForm.controls['productLine'].invalid && (productForm.controls['productLine'].dirty || formSubmitted)"
+              class="text-danger">Product Line is required only Alphabets </div>
+          </div>
+  
+          <div>
+            <label for="productScale">Product Scale:</label>
+            <input class="mt-3" type="text" id="productScale" style="margin-left: 4.5rem; " name="productScale"
+              [(ngModel)]="product.productScale" required>
+            <div *ngIf="productForm.controls['productScale'].invalid && (productForm.controls['productScale'].dirty || formSubmitted)"
+              class="text-danger">Product Scale is required</div>
+          </div>
+  
+          <div>
+            <label for="productVendor">Product Vendor:</label>
+            <input class="mt-3" type="text" id="productVendor" style="margin-left: 3.8rem; " name="productVendor"
+              [(ngModel)]="product.productVendor" required pattern="[a-zA-Z-0-9]*">
+            <div *ngIf="productForm.controls['productVendor'].invalid && (productForm.controls['productVendor'].dirty || formSubmitted)"
+              class="text-danger">Product Vendor is required</div>
+          </div>
+  
+          <div>
+            <label for="productDescription">Product Description:</label>
+            <input class="mt-3" type="text" id="productDescription" style="margin-left: 1.9rem; " name="productDescription"
+              [(ngModel)]="product.productDescription" required pattern="[a-zA-Z]*">
+            <div *ngIf="productForm.controls['productDescription'].invalid && (productForm.controls['productDescription'].dirty || formSubmitted)"
+              class="text-danger">Product Description is required</div>
+          </div>
+  
+          <div>
+            <label for="quantityInStock">Quantity In Stock:</label>
+            <input class="mt-3" type="text" id="quantityInStock" style="margin-left: 3.5rem; " name="quantityInStock"
+              [(ngModel)]="product.quantityInStock" required pattern="[0-9]*">
+            <div *ngIf="productForm.controls['quantityInStock'].invalid && (productForm.controls['quantityInStock'].dirty || formSubmitted)"
+              class="text-danger">Quantity In Stock is required</div>
+          </div>
+  
+          <div>
+            <label for="buyPrice">Buy Price:</label>
+            <input class="mt-3" type="text" id="buyPrice" style="margin-left: 6.75rem; " name="buyPrice"
+              [(ngModel)]="product.buyPrice" required>
+            <div *ngIf="productForm.controls['buyPrice'].invalid && (productForm.controls['buyPrice'].dirty || formSubmitted)"
+              class="text-danger">Buy Price is required</div>
+          </div>
+  
+          <div>
+            <label for="msrp">MSRP:</label>
+            <input class="mt-3" type="text" id="msrp" style="margin-left: 8.25rem; " name="msrp"
+              [(ngModel)]="product.msrp" required>
+            <div *ngIf="productForm.controls['msrp'].invalid && (productForm.controls['msrp'].dirty || formSubmitted)"
+              class="text-danger">MSRP is required</div>
+          </div>
+  
+          <hr>
+  
+          <button type="submit" class="btn" style="background-color: lightblue;">ADD Product</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

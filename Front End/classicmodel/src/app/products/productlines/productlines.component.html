@@ -1,0 +1,30 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form  class="bg-light p-4 align-center" (ngSubmit)="onSubmit()" >
+                <div>
+                    <label for="productLine">Product Line:</label>
+                    <input class="mt-3" type="text" id="productLine" style="margin-left: 5rem;" name="productLine"
+                    [(ngModel)]="lines.productLine">
+                </div>  
+                <div>
+                    <label for="textDescription">Text Description</label>
+                    <input class="mt-3" type="textDescription" id="textDescription" style="margin-left: 3.85rem;" name="textDescription"
+                    [(ngModel)]="lines.textDescription">
+                </div>
+                <div>
+                    <label for="htmlDescription">HTML Description</label>
+                    <input class="mt-3" type="text" id="htmlDescription" style="margin-left: 3.1rem;" name="htmlDescription"
+                    [(ngModel)]="lines.htmlDescription">
+                </div>
+                <div>
+                    <label for="image">Image</label>
+                    <input class="mt-3"  type="file" id="image" style="margin-left: 8.19rem;" name="image" (change)="onFileSelected($event)">
+                  </div><br>
+                <button type="submit" class="btn" style="background-color:lightblue;">ADD Product Lines</button>
+        </form>
+    </div>
+</div>
+</div>
+
+

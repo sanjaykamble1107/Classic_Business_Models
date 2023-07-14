@@ -1,0 +1,113 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form class="bg-light p-4 align-center border border-dark" (ngSubmit)="onSubmit()" #customerForm="ngForm">
+          <h3>Add Customer</h3>
+          <hr>
+          <div>
+            <label for="customerName">Customer Name:</label>
+            <input class="mt-3" type="text" id="customerName" style="margin-left:5.4rem; " name="customerName"
+              [(ngModel)]="customer.customerName" required pattern="[a-zA-z\s]*">
+            <div *ngIf="customerForm.controls['customerName'].invalid && (customerForm.controls['customerName'].dirty || customerForm.controls['customerName'].touched)">
+              <p style="color: red;">Customer Name is required.</p>
+            </div>
+          </div>
+          <div>
+            <label for="contactLastName">Contact Last Name:</label>
+            <input class="mt-3" type="text" id="contactLastName" style="margin-left:4.2rem; "
+              name="contactLastName" [(ngModel)]="customer.contactLastName" required pattern="[a-zA-Z]*">
+            <div *ngIf="customerForm.controls['contactLastName'].invalid && (customerForm.controls['contactLastName'].dirty || customerForm.controls['contactLastName'].touched)">
+              <p style="color: red;">Contact Last Name is required and should only contain alphabets.</p>
+            </div>
+          </div>
+          <div>
+            <label for="contactFirstName">Contact First Name:</label>
+            <input class="mt-3" type="text" id="contactFirstName" style="margin-left:4.2rem; "
+              name="contactFirstName" [(ngModel)]="customer.contactFirstName" required pattern="[a-zA-Z]*">
+            <div *ngIf="customerForm.controls['contactFirstName'].invalid && (customerForm.controls['contactFirstName'].dirty || customerForm.controls['contactFirstName'].touched)">
+              <p style="color: red;">Contact First Name is required and should only contain alphabets.</p>
+            </div>
+          </div>
+          <div>
+            <label for="phone">Phone:</label>
+            <input class="mt-3" type="text" id="phone" style="margin-left:9.9rem; " name="phone"
+              [(ngModel)]="customer.phone" required pattern="[789]\d{9}">
+            <div *ngIf="customerForm.controls['phone'].invalid && (customerForm.controls['phone'].dirty || customerForm.controls['phone'].touched)">
+              <p style="color: red;">Phone number is required with only digit & should start from 7 or 8 or 9.</p>
+            </div>
+          </div>
+          <div>
+            <label for="addressLine1">Address Line 1:</label>
+            <input class="mt-3" type="text" id="addressLine1" style="margin-left:6.2rem; " name="addressLine1"
+              [(ngModel)]="customer.addressLine1" required >
+            <div *ngIf="customerForm.controls['addressLine1'].invalid && (customerForm.controls['addressLine1'].dirty || customerForm.controls['addressLine1'].touched)">
+              <p style="color: red;">Address Line 1 is required.</p>
+            </div>
+          </div>
+          <div>
+            <label for="addressLine2">Address Line 2:</label>
+            <input class="mt-3" type="text" id="addressLine2" style="margin-left:6.2rem; " name="addressLine2"
+              [(ngModel)]="customer.addressLine2" required >
+            <div *ngIf="customerForm.controls['addressLine2'].invalid && (customerForm.controls['addressLine2'].dirty || customerForm.controls['addressLine2'].touched)">
+              <p style="color: red;">Address Line 2 is required.</p>
+            </div>
+          </div>
+          <div>
+            <label for="city">City:</label>
+            <input class="mt-3" type="text" id="city" style="margin-left:11rem; " name="city"
+              [(ngModel)]="customer.city" required pattern="[a-zA-z]*">
+            <div *ngIf="customerForm.controls['city'].invalid && (customerForm.controls['city'].dirty || customerForm.controls['city'].touched)">
+              <p style="color: red;">City is required.</p>
+            </div>
+          </div>
+          <div>
+            <label for="state">State:</label>
+            <input class="mt-3" type="text" id="state" style="margin-left:10.5rem; " name="state"
+              [(ngModel)]="customer.state" required pattern="[a-zA-z]*">
+            <div *ngIf="customerForm.controls['state'].invalid && (customerForm.controls['state'].dirty || customerForm.controls['state'].touched)">
+              <p style="color: red;">State is required.</p>
+            </div>
+          </div>
+          <div>
+            <label for="postalCode">Postal Code:</label>
+            <input class="mt-3" type="text" id="postalCode" style="margin-left:7.5rem; " name="postalCode"
+              [(ngModel)]="customer.postalCode" required pattern="[0-9]*">
+            <div *ngIf="customerForm.controls['postalCode'].invalid && (customerForm.controls['postalCode'].dirty || customerForm.controls['postalCode'].touched)">
+              <p style="color: red;">Postal Code is required.</p>
+            </div>
+          </div>
+          <div>
+            <label for="country">Country:</label>
+            <input class="mt-3" type="text" id="country" style="margin-left:9.1rem; " name="country"
+              [(ngModel)]="customer.country" required pattern="[a-zA-z]*">
+            <div *ngIf="customerForm.controls['country'].invalid && (customerForm.controls['country'].dirty || customerForm.controls['country'].touched)">
+              <p style="color: red;">Country is required.</p>
+            </div>
+          </div>
+          <div>
+            <label for="salesRepEmployeeNumber">Sales Rep Number:</label>
+            <input class="mt-3" type="text" id="salesRepEmployeeNumber" style="margin-left:4.4rem; "
+              name="salesRepEmployeeNumber" [(ngModel)]="customer.salesRepEmployeeNumber" required pattern="[0-9]*">
+            <div *ngIf="customerForm.controls['salesRepEmployeeNumber'].invalid && (customerForm.controls['salesRepEmployeeNumber'].dirty || customerForm.controls['salesRepEmployeeNumber'].touched)">
+              <p style="color: red;">Sales Rep Number is required and should only contain digits.</p>
+            </div>
+          </div>
+          <div>
+            <label for="creditLimit">Credit Limit:</label>
+            <input class="mt-3" type="text" id="creditLimit" style="margin-left:7.5rem; " name="creditLimit"
+              [(ngModel)]="customer.creditLimit" required pattern="[0-9]*">
+            <div *ngIf="customerForm.controls['creditLimit'].invalid && (customerForm.controls['creditLimit'].dirty || customerForm.controls['creditLimit'].touched)">
+              <p style="color: red;">Credit Limit is required.</p>
+            </div>
+          </div>
+          <hr>
+  
+          <div *ngIf="formSubmitted && customerForm.invalid">
+            <p style="color: red;">Please fill out all required fields correctly.</p>
+          </div>
+          <button type="submit" class="btn" style="background-color:rgb(76, 165, 195);">ADD Customer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,40 @@
+<div class="card custom-card shadow col-md-12 m-2 border-0">
+
+  <div class="card-header text-center border-0" style="background-color: lightgray;">
+
+    <div>
+      <a routerLink="/addproduct" class="btn btn-success">Add Product</a>
+      <a routerLink="/updateproduct" class="btn btn-success" style="margin-left:1rem;">Update Product</a>
+      <a routerLink="/showproducts" class="btn btn-success" style="margin-left:1rem;">Show All Products</a>
+      <a routerLink="/productlines" class="btn btn-success" style="margin-left:1rem;">Add Products Lines</a>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-3" *ngFor="let product of pp">
+          <div class="card h-100">
+            <img class="card-img-top" [src]="product.image" [alt]="product.htmlDescription">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.productLine }}</h5>
+              <p class="card-text">{{ product.textDescription }}</p>
+            </div>
+
+            <div class="card-footer d-flex justify-content-center">
+              <div class="d-flex justify-content-aound">
+              <a [routerLink]="'/classiccars/' + product.productLine " class="btn btn-primary">--Open List--</a>
+            </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+
+  <!-- <router-outlet></router-outlet> -->

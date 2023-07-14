@@ -1,0 +1,56 @@
+/* .card {
+  width: 100%;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  background-color: #343a40;
+  color: #fff;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h5 {
+  margin: 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+}
+
+.table th {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.table-bordered {
+  border: 1px solid #ced4da;
+}
+
+.table-bordered thead th,
+.table-bordered tbody td {
+  border: 1px solid #ced4da;
+} */
+
+/* Additional styles for aligning table data */
+/* .table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table td:first-child {
+  text-align: left;
+} */
+

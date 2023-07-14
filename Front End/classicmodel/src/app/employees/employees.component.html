@@ -1,0 +1,141 @@
+<head>
+
+  <title>Employees</title>
+  </head>
+  <body>
+    <div id="employeeList">
+      <div class="container">
+        <h3>Employees</h3>
+        <div class="card text-white bg-secondary" style="width: auto;">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div>          
+              <h4>Find result by:</h4>
+              <br>
+              <table>
+                <thead>
+                  <div>
+                  <tr>
+                    <th>Id:<input type="text" placeholder="Search By Id" [(ngModel)]="searchId" (keyup)="searchById()"></th>
+                    <th>Office:<input type="text" placeholder="Search By Office Code" [(ngModel)]="searchOfficeCode" (keyup)="searchByOfficeCode()"></th>
+                    <!-- <th>Search By City:<input type="text" placeholder="City" [(ngModel)]="inputcity" (keyup)="searchByCity()"> </th> -->
+                  </tr>
+                  <br>
+                  </div>
+                </thead>
+              </table>
+            </div>
+            <div style="margin-left:10rem; "class="col-md-6 text-md-right"><br><br>
+              <a  routerLink="/addemp" class="btn btn-dark ">Add Employee</a>
+              <a  routerLink="/office" class="btn btn-primary" style="margin-left:1rem; " >Offices Details</a>
+            </div>
+          </div >
+          <div class="card-body" >
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Employee Number</th>
+                  <th>Last Name</th>
+                  <th>First Name</th>
+                  <th>Extension</th>
+                  <th>Email</th>
+                  <th>Office Code</th>
+                  <th>Report To</th>
+                  <th>Job Title</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <ng-container *ngIf="!searchId || (searchId && oneEmp)"> -->
+ 
+                  <tr *ngFor="let emp of emp ">
+ 
+                    <td>{{ emp.employeeNumber }}</td>
+ 
+                    <td>{{ emp.lastName }}</td>
+ 
+                    <td>{{ emp.firstName }}</td>
+ 
+                    <td>{{ emp.extension }}</td>
+ 
+                    <td>{{ emp.email }}</td>
+ 
+                    <td>{{ emp.officeCode }}</td>
+ 
+                    <td>{{ emp.reportsTo }}</td>
+ 
+                    <td>{{ emp.jobTitle }}</td>
+ 
+                   <td><a routerLink="/update/{{emp.employeeNumber}}" class="btn-outline-dark">update</a></td>
+                  </tr>
+ 
+                <!-- </ng-container> -->
+ 
+                <ng-container *ngIf="searchOfficeCode && filteredEmpList.length > 0">
+ 
+                  <tr *ngFor="let emp of filteredEmpList">
+ 
+                    <td>{{ emp.employeeNumber }}</td>
+ 
+                    <td>{{ emp.lastName }}</td>
+ 
+                    <td>{{ emp.firstName }}</td>
+ 
+                    <td>{{ emp.extension }}</td>
+ 
+                    <td>{{ emp.email }}</td>
+ 
+                    <td>{{ emp.officeCode }}</td>
+ 
+                    <td>{{ emp.reportsTo }}</td>
+ 
+                    <td>{{ emp.jobTitle }}</td>
+ 
+                    <td><a routerLink="/update/{{emp.employeeNumber}} " class="btn-outline-dark " >update
+                     
+                    </a></td>
+ 
+                  </tr>
+ 
+                </ng-container>
+
+                <ng-container *ngIf="inputcity && filterCity.length > 0 && !searchId && !searchOfficeCode">
+ 
+                  <tr *ngFor="let emp of filterCity">
+ 
+                    <td>{{ emp.employeeNumber }}</td>
+ 
+                    <td>{{ emp.lastName }}</td>
+ 
+                    <td>{{ emp.firstName }}</td>
+ 
+                    <td>{{ emp.extension }}</td>
+ 
+                    <td>{{ emp.email }}</td>
+ 
+                    <td>{{ emp.officeCode }}</td>
+ 
+                    <td>{{ emp.reportsTo }}</td>
+ 
+                    <td>{{ emp.jobTitle }}</td>
+ 
+                    <td><a routerLink="/update/{{emp.employeeNumber}}" class="btn-outline-dark">update</a></td>
+ 
+                  </tr>
+ 
+                </ng-container>
+
+ 
+              </tbody>
+ 
+            </table>
+ 
+          </div>
+ 
+        </div>
+ 
+      </div>
+ 
+    </div>
+ 
+  </body>
+

@@ -1,0 +1,104 @@
+<html>
+
+<body>
+    <div id="employeeList">
+        <h3 style="align-content: center;">Office List</h3>
+        <!-- <p>
+    <button type="button" class="btn btn-primary"> Add</button>
+    </p> -->
+        <div class="container">
+            <div class="card text-white bg-secondary">
+                <div class="card-header ">
+                    <h5> Office List:</h5>
+                    <a routerLink="/addoffice" class="btn btn-dark "> Add Office </a>
+                    <a routerLink="/office" type="button" class="btn btn-sm">Office List</a>
+                    <th>
+                        office code: <input type="text" placeholder="Details By OfficeCode" [(ngModel)]="searchOfficeCode" (keyup)="getOfficeDetailsByCode()">
+                    </th>
+                    <th>
+                        City: <input type="text" placeholder="Details By City" [(ngModel)]="searchOfficeCity" (keyup)="getOfficeDetailsByCity()">
+                    </th>
+                    <!-- <td>
+                        <a href="#" class="btn-outline-dark" (click)="getOfficeDetailsByCode(o.officeCode)">Get by Office Code</a>
+                        <a href="#" class="btn-outline-dark" (click)="getOfficeDetailsByCity(o.city)">Get by City</a>
+                    </td> -->
+
+                </div>
+            </div>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Office Code</th>
+                        <th>City</th>
+                        <th>Phone</th>
+                        <th>Address Line 1</th>
+                        <th>Address Line 2</th>
+                        <th>State</th>
+                        <th>Country</th>
+                        <th>Postal Code</th>
+                        <th>Territory</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <ng-container *ngFor="let o of off">
+                    <tr>
+                        <td>{{o.officeCode}}</td>
+                        <td>{{o.city}}</td>
+                        <td>{{o.phone}}</td>
+                        <td>{{o.addressLine1}}</td>
+                        <td>{{o.addressLine2}}</td>
+                        <td>{{o.state}}</td>
+                        <td>{{o.country}}</td>
+                        <td>{{o.postalCode}}</td>
+                        <td>{{o.territory}}</td>
+                        <td><a routerLink="/updateoffice/{{o.officeCode}}" class="btn-outline-dark">Update</a></td>
+                    </tr>
+                </ng-container>
+
+                <ng-container *ngIf="searchOfficeCity && filterOfficeList.length > 0">
+                    <tr *ngFor="let o of filterOfficeList">
+                        <td>{{o.officeCode}}</td>
+                        <td>{{o.city}}</td>
+                        <td>{{o.phone}}</td>
+                        <td>{{o.addressLine1}}</td>
+                        <td>{{o.addressLine2}}</td>
+                        <td>{{o.state}}</td>
+                        <td>{{o.country}}</td>
+                        <td>{{o.postalCode}}</td>
+                        <td>{{o.territory}}</td>
+                        <td><a routerLink="/updateoffice/{{o.officeCode}}" class="btn-outline-dark">Update</a></td>
+                    </tr>
+                </ng-container>
+                </tbody>
+
+
+
+
+
+                <!-- <tbody>
+    <ng-container *ngIf="!searchId || (searchId)">
+    <tr *ngFor="let emp of emplist">
+    <td>{{ emp.employeeNumber }}</td>
+    <td>{{ emp.lastName }}</td>
+    <td>{{ emp.firstName }}</td>
+    <td>{{ emp.extension }}</td>
+    <td>{{ emp.email }}</td>
+    <td>{{ emp.officeCode }}</td>
+    <td>{{ emp.reportsTo }}</td>
+    <td>{{ emp.jobTitle }}</td>
+    <td><a href="update" class="btn-outline-dark">update</a></td> -->
+                <!-- <td><a  (click)="updateEmployee(emp)"  class="btn-outline-dark">Update</a></td>
+    
+    </tr>
+    </ng-container>
+    </tbody> -->
+            </table>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -80,6 +80,7 @@ public class AuthController {
 		
 		if(optional.isEmpty()) 
 		{
+			//throw new UsernameNotFoundException("User not found with that name");
 			System.out.println("*****####");
 		}
 		System.out.println(userName+"---"+password);

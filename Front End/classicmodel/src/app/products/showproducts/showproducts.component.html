@@ -1,0 +1,99 @@
+<body>
+    <div id="productId">
+        <div class="container">
+            <h3 class="text-center">All Products </h3>
+            <div class="card text-white bg-secondary">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="col">
+                        <select class="form-select" id="searchCriteria" [(ngModel)]="selectedCriteria">
+                            <option value="home" selected>Search By</option>
+                            <option value="productCode">Product Code</option>
+                            <option value="productName">Product Name</option>
+                            <option value="productScale">Product Scale</option>
+                            <option value="productVendor">Product Vendor</option>
+                            <option value="totalSaleForProduct">get Total Sale For Product</option>
+                            <option value="totalOrderedQuantity">get Total Ordered Quantity</option>
+                            <option value="totalSale">Get Total Sale</option>
+                            <option value="highDemandProducts">Get High Demand Products</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="input-group">
+                            <input type="text" [(ngModel)]="searchprodname" (keyup)="search()"
+                                class="form-control rounded" placeholder="Search">
+                        </div>
+                       </div>
+                      </div>
+                      </div>
+                        <p class="" *ngIf="isProductQuantityVisible">Product Quantity : {{totalOrderedQuantity}} </p>
+                        <p class="" *ngIf="istotalSaleForProductVisible">Total Sale For Product : {{totalSaleForProduct}} </p>
+                        <p class="" *ngIf="istotalSaleVisible">Total Sale : {{totalSale}} </p>
+                        <p class="" *ngIf="ishighDemandProductVisible">High Demand Products: {{highDemandProduct}} </p>
+                    <div class="container mt-4 overflow-x-auto"></div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>productCode</th>
+                                <th>productName</th>
+                                <th>productLine</th>
+                                <th>productScale</th>
+                                <th>productVendor</th>
+                                <th>productDescription</th>
+                                <th>quantityInStock</th>
+                                <th>buyPrice</th>
+                                <th>MSRP</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of filteredProductList || prod">
+                                <td>{{ product.productCode }}</td>
+                                <td>{{ product.productName }}</td>
+                                <td>{{ product.productLine }}</td>
+                                <td>{{ product.productScale }}</td>
+                                <td>{{ product.productVendor }}</td>
+                                <td>{{ product.productDescription }}</td>
+                                <td>{{ product.quantityInStock }}</td>
+                                <td>{{ product.buyPrice }}</td>
+                                <td>{{ product.msrp }}</td>
+                                <td><a routerLink="/update" class="btn-outline-dark">update</a></td>
+                              </tr>
+                             <ng-container>
+                                <tr *ngFor="let product of prod">
+                                    <td>{{ product.productCode }}</td>
+                                    <td>{{ product.productName }}</td>
+                                    <td>{{ product.productLine }}</td>
+                                    <td>{{ product.productScale }}</td>
+                                    <td>{{ product.productVendor }}</td>
+                                    <td>{{ product.productDescription }}</td>
+                                    <td>{{ product.quantityInStock }}</td>
+                                    <td>{{ product.buyPrice }}</td>
+                                    <td>{{ product.msrp }}</td>
+                                    <td><a routerLink="/updateproduct" class="btn-outline-dark">update </a></td>
+                                </tr>
+                            <!-- </ng-container>
+                            <ng-container *ngIf="productlist && filteredProductList.length>0">
+                                <tr *ngFor="let product of filteredProductList">
+                                    <td>{{ product.productCode}}</td>
+                                    <td>{{ product.productName }}</td>
+                                    <td>{{ product.productLine }}</td>
+                                    <td>{{ product.productScale }}</td>
+                                    <td>{{ product.productVendor }}</td>
+                                    <td>{{ product.productDescription }}</td>
+                                    <td>{{ product.quantityInStock }}</td>
+                                    <td>{{ product.buyPrice }}</td>
+                                    <td>{{ product.msrp }}</td>
+                                    <td><a routerLink="/update" class="btn-outline-dark">update</a></td>
+                                </tr>
+                </ng-container>
+            </tbody>
+         </table>
+ </div> -->
+</ng-container>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+

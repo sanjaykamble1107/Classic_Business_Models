@@ -1,0 +1,54 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+        
+        <div class="col-md-6">
+            <form   class="bg-light p-4 align-center" >
+                <!-- Form content here -->
+                <h3>You Can Update Your Data Here!</h3>
+                <hr>
+                <div>
+                    <label for="employeeNumber">Employee Number:</label>
+                    <input type="text" style="margin: 1rem;" id="employeeNumber" name="employeeNumber"
+                      [(ngModel)]="employeeNumber" >
+                </div>
+                <div>
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" style="margin-left: 4.5rem;" name="lastName"
+                    [(ngModel)]="lastName">
+                </div>
+                <div>
+                    <label for="firstName">First Name:</label>
+                    <input class="mt-3" type="text" id="firstName" style="margin-left: 4.5rem; " name="firstName"
+                    [(ngModel)]="firstName">
+                </div>
+                <div>
+                    <label for="extension">Extension:</label>
+                    <input class="mt-3" type="text" id="extension" style="margin-left:5rem; " name="extension"
+                    [(ngModel)]="extension">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input class="mt-3" type="email" id="email" style="margin-left:7rem; " name="email"
+                    [(ngModel)]="email">
+                </div>
+                <div>
+                    <label for="officeCode">Office Code:</label>
+                    <input class="mt-3" type="text" id="officeCode" style="margin-left:4.25rem; " name="officeCode"
+                    [(ngModel)]="officeCode">
+                </div>
+                <div>
+                    <label for="reportsTo">Report To:</label>
+                    <input class="mt-3" type="text" id="reportsTo" style="margin-left:5.25rem; " name="reportsTo"
+                    [(ngModel)]="reportsTo">
+                </div>
+                <div>
+                    <label for="jobTitle">Job Title:</label>
+                    <input class="mt-3" type="text" id="jobTitle" style="margin-left:5.95rem; " name="jobTitle"
+                    [(ngModel)]="jobTitle">
+                </div>
+                <hr>
+                <button class="btn btn-dark" (click)="updateEmployee()" style="background-color:lightblue;">Update</button>
+            </form>
+        </div>
+    </div>
+</div>

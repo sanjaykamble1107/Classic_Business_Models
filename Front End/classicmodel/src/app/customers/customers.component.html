@@ -1,0 +1,127 @@
+<div>
+    <div class="card-header text-center border-0" style="background-color: #fffffffb;">
+        <h2>List of Customers</h2>
+    </div>
+    <div class="d-flex justify-content-sm-evenly">
+        <a routerLink="/addcust" type="button" class="btn btn-success"> Add Customer </a>
+
+        <a routerLink="/orders" type="button" class="btn btn-success">Orders</a>
+        <a routerLink="/payments" type="button" class="btn btn-success">Payments</a>
+    </div>
+    <div class="container mt-4 overflow-x-auto border border-dark">
+        <div class="row">
+            <div class="col">
+                <p>Filter By</p>
+                <select class="form-select border border-success" id="searchCriteria" [(ngModel)]="selectedCriteria">
+
+                    <option value="home" selected>Search By</option>
+                    <option value="customerNumber">Customer Number</option>
+                    <option value="customerName">Customer Name</option>
+                    <option value="contactLastName">Contact Last Name</option>
+                    <option value="contactFirstName">Contact First Name</option>
+                    <option value="phone">Phone</option>
+                    <option value="addressLine1">Address Line 1</option>
+                    <option value="addressLine2">Address Line 2</option>
+                    <option value="city">City</option>
+                    <option value="state">State</option>
+                    <option value="postalCode">Postal Code</option>
+                    <option value="country">Country</option>
+                    <option value="salesRepEmployeeNumber">Sales Rep Employee Number</option>
+                    <!-- <option value="creditLimit">Credit Limit</option> -->
+                </select>
+            </div>
+            <div class="col">
+                <p>Provide the Input Field </p>
+                <div class="input-group">
+                    <input type="text" placeholder="Enter Data Here" [(ngModel)]="searchcustname" (keyup)="search()"
+                        class="form-control rounded border border-success">
+                </div>
+            </div>
+
+        </div>
+        <div class="card-body table table-bordered container container-sm">
+            <table class="table mt-3">
+                <thead>
+                    <tr>
+                        <th>Customer Number</th>
+                        <th>Customer Name</th>
+                        <th>Contact LastName</th>
+                        <th>Contact FirstName</th>
+                        <th>Phone</th>
+                        <th>Address Line 1</th>
+                        <th>Address Line 2</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>PostalCode</th>
+                        <th>Country</th>
+                        <th>SalesRep EmployeeNumber</th>
+                        <th>Credit Limit</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <ng-container>
+                        <tr *ngFor="let custo of cust">
+                            <td>{{custo.customerNumber}}</td>
+                            <td>{{custo.customerName}}</td>
+                            <td>{{custo.contactLastName}}</td>
+                            <td>{{custo.contactFirstName}}</td>
+                            <td>{{custo.phone}}</td>
+                            <td>{{custo.addressLine1}}</td>
+                            <td>{{custo.addressLine2}}</td>
+                            <td>{{custo.city}}</td>
+                            <td>{{custo.state}}</td>
+                            <td>{{custo.postalCode}}</td>
+                            <td>{{custo.country}}</td>
+                            <td>{{custo.salesRepEmployeeNumber}}</td>
+                            <td>{{custo.creditLimit}}</td>
+                            <td><a routerLink="/updatecustomer/{{custo.customerNumber}}"
+                                    class="btn btn-outline-success">update</a></td>
+
+                        </tr>
+
+
+                        <!-- <ng-container *ngIf="searchofficecity && filterCustList.length > 0"> -->
+                        <tr *ngFor="let custo of filterCustList">
+                            <td>{{custo.customerNumber}}</td>
+                            <td>{{custo.customerName}}</td>
+                            <td>{{custo.contactLastName}}</td>
+                            <td>{{custo.contactFirstName}}</td>
+                            <td>{{custo.phone}}</td>
+                            <td>{{custo.addressLine1}}</td>
+                            <td>{{custo.addressLine2}}</td>
+                            <td>{{custo.city}}</td>
+                            <td>{{custo.state}}</td>
+                            <td>{{custo.postalCode}}</td>
+                            <td>{{custo.country}}</td>
+                            <td>{{custo.salesRepEmployeeNumber}}</td>
+                            <td>{{custo.creditLimit}}</td>
+                            <td><a routerLink="/updatecustomer/{{custo.customerNumber}}"
+                                    class="btn-outline-dark bi bi-box-arrow-in-down">update></a></td>
+
+                        </tr>
+
+                    </ng-container>
+                    <!-- <ng-container *ngIf="searchbycountry && filterCustList.length > 0">
+                    <tr *ngFor="let custo of filterCustList" >
+                        <td>{{custo.customerNumber}}</td>
+                        <td>{{custo.customerName}}</td>
+                        <td>{{custo.contactLastName}}</td>
+                        <td>{{custo.contactFirstName}}</td>
+                        <td>{{custo.phone}}</td>
+                        <td>{{custo.addressLine1}}</td>
+                        <td>{{custo.addressLine2}}</td>
+                        <td>{{custo.city}}</td>
+                        <td>{{custo.state}}</td>
+                        <td>{{custo.postalCode}}</td>
+                        <td>{{custo.country}}</td>
+                        <td>{{custo.salesRepEmployeeNumber}}</td>
+                        <td>{{custo.creditLimit}}</td>
+                    </tr>
+                </ng-container> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

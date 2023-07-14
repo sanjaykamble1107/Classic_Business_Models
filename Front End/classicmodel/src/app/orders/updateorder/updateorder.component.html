@@ -1,0 +1,52 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="bg-light p-4 align-center">
+                <!-- (ngSubmit)="onSubmit()" -->
+                <h3>You Can Update Your Data Here!</h3>
+                <hr>
+                <div>
+                    <label for="orderNumber">Order Number:</label>
+                    <input type="text" id="orderNumber" style="margin-left: 4rem;" name="orderNumber"
+                        [(ngModel)]="orderNumber">
+                </div>
+                <div>
+                    <label for="orderDate">Order Date:</label>
+                    <input class="mt-3" type="text" id="orderDate" style="margin-left:5.4rem; " name="orderDate"
+                        [(ngModel)]="orderDate">
+                </div>
+                <div>
+                    <label for="requiredDate">Required Date:</label>
+                    <input class="mt-3" type="text" id="requiredDate" style="margin-left:4.1rem; " name="requiredDate"
+                        [(ngModel)]="requiredDate">
+                </div>
+                <div>
+                    <label for="shippedDate">Shipped Date:</label>
+                    <input class="mt-3" type="text" id="shippedDate" style="margin-left:4.4rem; " name="shippedDate"
+                        [(ngModel)]="shippedDate">
+                </div>
+                <div>
+                    <label for="status">Status:</label>
+                    <input class="mt-3" type="text" id="status" style="margin-left:7.7rem; " name="status"
+                        [(ngModel)]="status">
+                </div>
+                <div>
+                    <label for="comments">Comments:</label>
+                    <input class="mt-3" type="text" id="comments" style="margin-left:5.55rem; " name="comments"
+                        [(ngModel)]="comments">
+                </div>
+                <div>
+                    <label for="customerNumber">Customer Number:</label>
+                    <input class="mt-3" type="text" id="customerNumber" style="margin-left:2.2rem; "
+                        name="customerNumber" [(ngModel)]="customerNumber">
+                </div>
+
+                <hr>
+                <!-- <button class="align-center" href="employees"  type="submit" style="background-color:rgb(141, 195, 212) ;" >ADD</button> -->
+                <button class="btn btn-outline-success" (click)="onSubmit()">Update Order</button>
+                <!-- (click)="onSubmit()" -->
+            </form>
+        </div>
+    </div>
+</div>
+

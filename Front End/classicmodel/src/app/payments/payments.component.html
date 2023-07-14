@@ -1,0 +1,59 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+      <div class="d-flex justify-content-center">
+        <a routerLink="/addpayment" type="button" class="btn btn-outline-info"> Add Payment</a>
+        <a routerLink="/updatepayment" style="margin-left: 4.5rem;" type="button" class="btn btn-outline-info">Update Payment</a>
+      </div>
+      <div class="col-md-6">
+        <form class="bg-light p-4" (ngSubmit)="search()">
+          <div class="form-group">
+            <label for="searchCriteria">Search Criteria</label>
+            <select class="form-control" id="searchCriteria" name="searchCriteria" [(ngModel)]="selectedCriteria">
+              <option value="paymentDate">Payment Date</option>
+              <option value="customerNumber">Customer Number</option>
+              <option value="checkNumber">Check Number</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="searchValue">Search Value</label>
+            <input type="text" class="form-control" id="searchValue" name="searchValue" [(ngModel)]="searchValue">
+          </div>
+          <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+ 
+    <div class="row justify-content-center mt-4" *ngIf="paymentDetails.length > 0 && searchValue">
+      <div class="col-md-8">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Customer Number</th>
+              <th>Check Number</th>
+              <th>Payment Date</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngIf="searchValue && paymentDetails.length > 0 ">         
+              <tr *ngFor="let payment of paymentDetails ">
+              <td>{{ payment.customerNumber }}</td>
+              <td>{{ payment.checkNumber }}</td>
+              <td>{{ payment.paymentDate | date}}</td>
+              <td>{{ payment.amount }}</td>
+            </tr>
+          </ng-container>
+
+   
+
+
+          </tbody>
+        </table>    
+      </div>
+    </div>
+  </div>
+ 
+
+

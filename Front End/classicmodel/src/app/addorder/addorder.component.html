@@ -1,0 +1,62 @@
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="bg-light p-4 align-center border border-dark" (ngSubmit)="onSubmit()" #orderForm="ngForm">
+                <h3>Add Order</h3>
+                <hr>
+
+                <div>
+                    <label for="customerNumber">Customer Number:</label>
+                    <input class="mt-3" type="text" id="customerNumber" style="margin-left: 6.6rem;"
+                        name="customerNumber" [(ngModel)]="order.customerNumber" required pattern="[0-9]*">
+                    <div *ngIf="orderForm.controls['customerNumber'].invalid && (orderForm.controls['customerNumber'].dirty || formSubmitted)"
+                        class="text-danger">Customer Number is required use Numbers</div>
+                </div>
+
+                <div>
+                    <label for="orderDate">Order Date:</label>
+                    <input class="mt-3" type="text" id="orderDate" style="margin-left: 9.8rem;" name="orderDate"
+                        [(ngModel)]="order.orderDate" required>
+                    <div *ngIf="orderForm.controls['orderDate'].invalid && (orderForm.controls['orderDate'].dirty || formSubmitted)"
+                        class="text-danger">Order Date is required</div>
+                </div>
+
+                <div>
+                    <label for="requiredDate">Required Date:</label>
+                    <input class="mt-3" type="text" id="requiredDate" style="margin-left: 8.1rem;" name="requiredDate"
+                        [(ngModel)]="order.requiredDate" required>
+                    <div *ngIf="orderForm.controls['requiredDate'].invalid && (orderForm.controls['requiredDate'].dirty || formSubmitted)"
+                        class="text-danger">Required Date is required</div>
+                </div>
+
+                <div>
+                    <label for="shippedDate">Shipped Date:</label>
+                    <input class="mt-3" type="text" id="shippedDate" style="margin-left: 8.5rem;" name="shippedDate"
+                        [(ngModel)]="order.shippedDate" required>
+                    <div *ngIf="orderForm.controls['shippedDate'].invalid && (orderForm.controls['shippedDate'].dirty || formSubmitted)"
+                        class="text-danger">Shipped Date is required</div>
+                </div>
+
+                <div>
+                    <label for="status">Status:</label>
+                    <input class="mt-3" type="text" id="status" style="margin-left: 11.9rem;" name="status"
+                        [(ngModel)]="order.status" required pattern="">
+                    <div *ngIf="orderForm.controls['status'].invalid && (orderForm.controls['status'].dirty || formSubmitted)"
+                        class="text-danger">Status is required</div>
+                </div>
+
+                <div>
+                    <label for="comments">Comments:</label>
+                    <input class="mt-3" type="text" id="comments" style="margin-left: 9.8rem;" name="comments"
+                        [(ngModel)]="order.comments" required pattern="">
+                    <div *ngIf="orderForm.controls['comments'].invalid && (orderForm.controls['comments'].dirty || formSubmitted)"
+                        class="text-danger">Comments is required</div>
+                </div>
+
+                <hr>
+
+                <button type="submit" class="btn" style="background-color: lightblue;">ADD ORDER</button>
+            </form>
+        </div>
+    </div>
+</div>
